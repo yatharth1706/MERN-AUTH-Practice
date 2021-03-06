@@ -3,6 +3,7 @@ const mongoose = require('mongoose')
 const bodyParser = require('body-parser')
 
 const app = express()
+const itemsRoute = require('./routes/api/items')
 // Middleware
 app.use(bodyParser.json());
 
@@ -22,6 +23,8 @@ mongoose.connect(db, {
 
 const port = process.env.PORT || 3000
 
+app.use('/api/items', itemsRoute)
+
 app.listen(port, () => {
-    console.log("Server started on port ${port}")
+    console.log(`Server started on port ${port}`)
 })
