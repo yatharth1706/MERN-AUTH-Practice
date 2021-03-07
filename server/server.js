@@ -21,7 +21,7 @@ mongoose.connect(db, {
     console.log(err)
 })
 
-const port = process.env.PORT || 3000
+const port = process.env.PORT || 5000
 
 app.use('/api/items', itemsRoute)
 
